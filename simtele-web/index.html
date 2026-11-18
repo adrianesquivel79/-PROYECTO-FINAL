@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SIMTELE-WEB, plataforma centralizada de supervisión, prevención y monitoreo de infraestructura de transporte por cable.">
+  <title>SIMTELE-WEB | Panel de control operativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="SIMTELE-WEB, ir al inicio">
+      <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-copy"><strong>MI TELEFÉRICO</strong><small>SIMTELE · CONTROL OPERATIVO</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#panel">Panel</a>
+      <a href="#detencion">Detención</a>
+      <a href="#mantenimiento">Mantenimiento</a>
+      <a href="#viento">Viento</a>
+      <a href="#sensores">Sensores</a>
+    </nav>
+    <a class="header-status" href="#panel"><span class="status-dot"></span> SISTEMA ACTIVO</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-label="Presentación de SIMTELE-WEB">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow hero-eyebrow"><span></span> CENTRO DE MONITOREO Y PREVENCIÓN</div>
+        <h1>SUPERVISIÓN Y CONTROL<br><em>INTEGRAL DE LÍNEA.</em></h1>
+        <p>Plataforma avanzada de gestión preventiva, control operacional y diagnóstico de sistemas de transporte por cable.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#panel">Acceder al panel <span>↗</span></a>
+          <a class="hero-link" href="#modulos">Ver módulos operativos <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <span>LA PAZ · BOLIVIA</span>
+        <div class="slide-controls" aria-label="Controles de imagen de portada">
+          <button class="slide-dot active" data-slide="0" aria-label="Mostrar imagen 1"></button>
+          <button class="slide-dot" data-slide="1" aria-label="Mostrar imagen 2"></button>
+          <button class="slide-dot" data-slide="2" aria-label="Mostrar imagen 3"></button>
+        </div>
+        <span class="slide-counter"><strong id="slideCurrent">01</strong> / 03</span>
+      </div>
+      <div class="hero-vertical">SIMTELE-WEB · MONITOREO Y CONTROL OPERATIVO</div>
+    </section>
+
+    <section class="intro-strip" id="modulos">
+      <div>
+        <span class="section-kicker">TECNOLOGÍA · PREVENCIÓN · CONTROL</span>
+        <h2>Cuatro subsistemas de<br><span>supervisión continua.</span></h2>
+      </div>
+      <p>Plataforma centralizada para el registro de variables operativas, análisis de parámetros ambientales y diagnóstico técnico de componentes electromecánicos en tiempo real.</p>
+    </section>
+
+    <section class="dashboard-section" id="panel">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">CENTRO DE OPERACIONES</span>
+          <h2>Panel de control</h2>
+          <p>Resumen general de actividad y estado de la red.</p>
+        </div>
+        <div class="live-label"><span class="status-dot"></span> EN LÍNEA</div>
+      </div>
+
+      <div class="overview-grid">
+        <article class="overview-card overview-blue">
+          <div class="overview-top"><span class="overview-icon">↯</span><span class="card-index">01 / SEGURIDAD</span></div>
+          <span class="overview-label">Detención de emergencia</span>
+          <strong>01</strong>
+          <a href="#detencion">Ejecutar cálculo <span>↗</span></a>
+        </article>
+        <article class="overview-card overview-red">
+          <div class="overview-top"><span class="overview-icon">⚙</span><span class="card-index">02 / EQUIPOS</span></div>
+          <span class="overview-label">Componentes registrados</span>
+          <strong id="maintenanceCount">00</strong>
+          <a href="#mantenimiento">Ver mantenimiento <span>↗</span></a>
+        </article>
+        <article class="overview-card overview-dark">
+          <div class="overview-top"><span class="overview-icon">≋</span><span class="card-index">03 / AMBIENTE</span></div>
+          <span class="overview-label">Último promedio de viento</span>
+          <strong><span id="windAverageCard">--</span><small> km/h</small></strong>
+          <a href="#viento">Analizar ráfagas <span>↗</span></a>
+        </article>
+        <article class="overview-card overview-white">
+          <div class="overview-top"><span class="overview-icon">⌁</span><span class="card-index">04 / INSTRUMENTACIÓN</span></div>
+          <span class="overview-label">Sensores activos</span>
+          <strong id="sensorCount">00</strong>
+          <a href="#sensores">Ver telemetría <span>↗</span></a>
+        </article>
+      </div>
+      <p class="simulation-note"><span>i</span> Los registros y umbrales operan bajo parámetros normativos estándar de control preventivo en instalaciones por cable.</p>
+    </section>
+
+    <section class="module-section" id="detencion">
+      <div class="module-heading">
+        <div class="module-number">01</div>
+        <div><span class="section-kicker">SEGURIDAD Y RESPUESTA</span><h2>Detención de emergencia</h2><p>Estima la distancia de frenado considerando la velocidad de circulación y el tiempo de reacción.</p></div>
+      </div>
+      <div class="module-layout">
+        <form class="panel-form" id="brakeForm" novalidate>
+          <div class="form-title"><span>PARÁMETROS OPERATIVOS</span><span class="form-step">01 — 01</span></div>
+          <div class="field-row">
+            <div class="field">
+              <label for="speed">Velocidad de línea <span>(km/h)</span></label>
+              <input type="number" id="speed" min="0.1" max="200" step="0.1" placeholder="Ej. 72" required>
+              <small>Ingrese un valor superior a 0 y hasta 200 km/h.</small>
+            </div>
+            <div class="field">
+              <label for="reactionTime">Tiempo de respuesta <span>(segundos)</span></label>
+              <input type="number" id="reactionTime" min="0.1" max="30" step="0.1" placeholder="Ej. 3" required>
+              <small>Tiempo transcurrido antes de la activación del freno.</small>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit">Calcular distancia <span>→</span></button>
+          <p class="form-message" id="brakeMessage" role="status" aria-live="polite"></p>
+        </form>
+        <aside class="result-panel" id="brakeResult" aria-live="polite">
+          <div class="result-orbit">↯</div>
+          <span class="result-label">DISTANCIA ESTIMADA DE REACCIÓN</span>
+          <div class="result-value"><strong id="distanceValue">—</strong><span>metros</span></div>
+          <div class="result-divider"></div>
+          <span class="result-label">ESTADO DE EVALUACIÓN</span>
+          <strong class="result-status" id="brakeStatus">Esperando datos</strong>
+          <p id="brakeExplanation">Complete los parámetros para generar el cálculo de trayectoria.</p>
+          <small class="result-footnote">Fórmula: d = (v / 3.6) × t</small>
+        </aside>
+      </div>
+      <p class="threshold-note">Umbral de referencia técnica: hasta 30 m = nivel operativo óptimo; superior a 30 m = protocolo de revisión preventiva.</p>
+    </section>
+
+    <section class="module-section module-tinted" id="mantenimiento">
+      <div class="module-heading">
+        <div class="module-number red-number">02</div>
+        <div><span class="section-kicker">GESTIÓN DE COMPONENTES</span><h2>Registro de mantenimiento</h2><p>Administración de piezas electromecánicas y control de estados de servicio.</p></div>
+      </div>
+      <div class="maintenance-layout">
+        <form class="panel-form" id="maintenanceForm" novalidate>
+          <div class="form-title"><span>NUEVO REGISTRO</span><span class="form-step">ALTA DE COMPONENTE</span></div>
+          <div class="field">
+            <label for="component">Nombre del componente</label>
+            <input type="text" id="component" maxlength="60" placeholder="Ej. Polea motriz principal" required>
+            <small>Identifique la pieza o subsistema objeto de inspección.</small>
+          </div>
+          <div class="field">
+            <label for="usageHours">Horas de operación</label>
+            <input type="number" id="usageHours" min="0" max="100000" step="0.1" placeholder="Ej. 1200" required>
+            <small>Rango admitido de 0 a 100 000 horas.</small>
+          </div>
+          <div class="field">
+            <label for="componentStatus">Estado operativo</label>
+            <select id="componentStatus" required>
+              <option value="">Seleccione un estado</option>
+              <option value="normal">Normal</option>
+              <option value="revision">Revisión</option>
+              <option value="urgente">Urgente</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Agregar componente <span>+</span></button>
+          <p class="form-message" id="maintenanceMessage" role="status" aria-live="polite"></p>
+        </form>
+        <div class="table-panel">
+          <div class="table-heading"><div><span class="section-kicker">INVENTARIO TÉCNICO</span><h3>Componentes registrados</h3></div><span class="table-count" id="tableCount">0 REGISTROS</span></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Componente</th><th>Horas de uso</th><th>Estado</th><th>Acción</th></tr></thead>
+              <tbody id="maintenanceTable">
+                <tr class="empty-row"><td colspan="4">No hay componentes registrados actualmente.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer"><span><i class="status-dot"></i> Sincronizado con el navegador</span><button type="button" class="text-button" id="clearMaintenance">Limpiar registros</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="module-section" id="viento">
+      <div class="module-heading">
+        <div class="module-number">03</div>
+        <div><span class="section-kicker">CONDICIONES AMBIENTALES</span><h2>Viento y oscilación</h2><p>Análisis estadístico de cinco mediciones consecutivas de velocidad e intensidad de ráfagas.</p></div>
+      </div>
+      <div class="wind-layout">
+        <form class="panel-form" id="windForm" novalidate>
+          <div class="form-title"><span>ESTACIÓN ANEMOMÉTRICA</span><span class="form-step">5 MEDICIONES</span></div>
+          <p class="form-intro">Ingrese los registros de velocidad en torres para determinar promedios y picos máximos.</p>
+          <div class="wind-inputs">
+            <div class="field"><label for="wind1">Medición 01 <span>(km/h)</span></label><input id="wind1" type="number" min="0" max="200" step="0.1" placeholder="00.0" required></div>
+            <div class="field"><label for="wind2">Medición 02 <span>(km/h)</span></label><input id="wind2" type="number" min="0" max="200" step="0.1" placeholder="00.0" required></div>
+            <div class="field"><label for="wind3">Medición 03 <span>(km/h)</span></label><input id="wind3" type="number" min="0" max="200" step="0.1" placeholder="00.0" required></div>
+            <div class="field"><label for="wind4">Medición 04 <span>(km/h)</span></label><input id="wind4" type="number" min="0" max="200" step="0.1" placeholder="00.0" required></div>
+            <div class="field"><label for="wind5">Medición 05 <span>(km/h)</span></label><input id="wind5" type="number" min="0" max="200" step="0.1" placeholder="00.0" required></div>
+          </div>
+          <button class="btn btn-primary" type="submit">Analizar ráfagas <span>→</span></button>
+          <p class="form-message" id="windMessage" role="status" aria-live="polite"></p>
+        </form>
+        <div class="wind-results">
+          <div class="wind-result-card wind-average"><span>PROMEDIO</span><strong id="windAverage">—</strong><small>km/h</small></div>
+          <div class="wind-result-card"><span>VALOR MÁXIMO</span><strong id="windMaximum">—</strong><small>km/h</small></div>
+          <div class="wind-classification"><span class="section-kicker">EVALUACIÓN METEOROLÓGICA</span><h3 id="windClass">Sin análisis pendiente</h3><p id="windDescription">Ingrese las cinco mediciones para evaluar el comportamiento del viento.</p><div class="wind-meter"><span id="windMeterFill"></span></div><small>Escala de referencia operativa de 0 a 100 km/h</small></div>
+        </div>
+      </div>
+      <p class="threshold-note">Parámetros de control: 0–20 km/h = condiciones normales; >20–40 km/h = alerta moderada; >40 km/h = restricción preventiva de velocidad.</p>
+    </section>
+
+    <section class="module-section module-tinted" id="sensores">
+      <div class="module-heading">
+        <div class="module-number red-number">04</div>
+        <div><span class="section-kicker">INSTRUMENTACIÓN Y DATOS</span><h2>Registro de sensores</h2><p>Validación de nomenclatura técnica y control de telemetría de sensores en línea.</p></div>
+      </div>
+      <div class="sensor-layout">
+        <form class="panel-form" id="sensorForm" novalidate>
+          <div class="form-title"><span>REGISTRO DE TELEMETRÍA</span><span class="form-step">VALIDACIÓN REGEXP</span></div>
+          <div class="field">
+            <label for="sensorCode">Código de sensor</label>
+            <input type="text" id="sensorCode" maxlength="7" placeholder="SEN-001" autocomplete="off" required>
+            <small>Formato requerido: prefijo SEN- seguido de tres dígitos numéricos.</small>
+          </div>
+          <div class="field">
+            <label for="sensorType">Parámetro de medición</label>
+            <select id="sensorType" required>
+              <option value="">Seleccione el tipo</option>
+              <option value="Velocidad">Velocidad</option>
+              <option value="Vibración">Vibración</option>
+              <option value="Temperatura">Temperatura</option>
+              <option value="Viento">Viento</option>
+              <option value="Posición">Posición</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sensorReading">Lectura instrumental</label>
+            <input type="number" id="sensorReading" step="0.01" min="-100000" max="100000" placeholder="Ej. 25.5" required>
+            <small>Ingrese el valor numérico registrado en el rango de -100 000 a 100 000.</small>
+          </div>
+          <button class="btn btn-primary" type="submit">Validar y registrar <span>→</span></button>
+          <p class="form-message" id="sensorMessage" role="status" aria-live="polite"></p>
+        </form>
+        <div class="sensor-table-panel">
+          <div class="table-heading"><div><span class="section-kicker">TELEMETRÍA VALIDADA</span><h3>Sensores activos</h3></div><span class="table-count" id="sensorTableCount">0 REGISTROS</span></div>
+          <div class="sensor-list" id="sensorList"><div class="sensor-empty">Los registros validados se mostrarán en este espacio.</div></div>
+          <div class="table-footer"><span><i class="status-dot"></i> Validación automática activa</span><button type="button" class="text-button" id="clearSensors">Limpiar registros</button></div>
+        </div>
+      </div>
+      <div class="regex-explainer"><span class="regex-icon">.*</span><div><strong>Validación de nomenclatura técnica</strong><p>Se aplica la expresión regular <code>/^SEN-\\d{3}$/</code> mediante el método <code>test()</code> para asegurar que el código cumpla con el estándar institucional (iniciando con SEN- y finalizando con tres dígitos exactos, ej. SEN-001).</p></div></div>
+    </section>
+
+    <section class="closing-banner">
+      <div><span class="section-kicker">SIMTELE-WEB · CONTROL OPERATIVO</span><h2>La seguridad y eficiencia<br>se fundamentan en el <em>monitoreo continuo.</em></h2></div>
+      <a href="#inicio" class="back-top">Volver arriba ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>SIMTELE-WEB</strong><small>CONTROL OPERATIVO</small></span></a>
+    <p>Sistema centralizado de supervisión y control · La Paz, Bolivia</p>
+    <span>© 2026 SIMTELE-WEB</span>
+  </footer>
+</body>
+</html>
